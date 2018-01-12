@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Cadastros
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page16">
+  <img src="assets/img/C3EQhYtxSN6fsmJC7T5a_smart_Glicemia.jpg" style="display:block;max-width:45%;max-height:40%;margin-left:auto;margin-right:auto;border-color:orange;" />
+<ion-list id="cadastros-list5">
+    <ion-item-sliding>
+      <ion-item color="none" on-click="goToCadastrarTerapia()" id="cadastros-list-item9">
+        <ion-icon name="medical" item-left></ion-icon>
+        Tratamento
+        <ion-icon name="add" item-right></ion-icon>
+      </ion-item>
+      <ion-item-options side="left">
+        <button ion-button color="positive"></button>
+      </ion-item-options>
+    </ion-item-sliding>
+    <ion-item color="none" href-inappbrowser="page18" on-click="goToDoseInsulina()" id="cadastros-list-item7">
+      <ion-icon name="pulse" item-left></ion-icon>
+      Dose de Insulina
+      <ion-icon name="add" item-right></ion-icon>
+    </ion-item>
+    <ion-item color="none" on-click="goToInsulinaEmergencial()" id="cadastros-list-item8">
+      <ion-icon name="medkit" item-left></ion-icon>
+      Insulina Emergencia
+      <ion-icon name="add" item-right></ion-icon>
+    </ion-item>
+    <ion-item color="none" on-click="goToObjetivoGlicemico()" id="cadastros-list-item10">
+      <ion-icon name="body" item-left></ion-icon>
+      Objetivo Glicemico
+      <ion-icon name="add" item-right></ion-icon>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-buttons start>
+      <button ion-button></button>
+    </ion-buttons>
+    <ion-title>
+      Objetivo Glicemico
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page12">
+  <img src="assets/img/C3EQhYtxSN6fsmJC7T5a_smart_Glicemia.jpg" style="display:block;max-width:45%;max-height:40%;margin-left:auto;margin-right:auto;border-color:orange;" />
+<div id="objetivoGlicemico-markdown2" class="show-list-numbers-and-dots"></div>
+  <div class="spacer" style="width:300px;height:12px;" id="objetivoGlicemico-spacer1"></div>
+  <div id="objetivoGlicemico-markdown3" class="show-list-numbers-and-dots">
+    <p style="color:#000000;">
+      O objetivo Glicêmico serve como um parâmetro de quantidade ideal de glicemia definida pelo médico com uma quantidade máxima e minima tidos como aceitaveis.
+    </p>
+  </div>
+  <form id="objetivoGlicemico-form13">
+    <ion-item id="objetivoGlicemico-range3">
+      <ion-range min="0" max="100" step="1" color="positive" pin="true" value="50">
+        <ion-label range-left>
+          Glicemia Ideal
+        </ion-label>
+      </ion-range>
+    </ion-item>
+    <ion-item id="objetivoGlicemico-range4">
+      <ion-range min="0" max="100" step="1" color="positive" pin="true"value="50">
+        <ion-label range-left>
+          Glicemia Max
+        </ion-label>
+      </ion-range>
+    </ion-item>
+    <ion-item id="objetivoGlicemico-range5">
+      <ion-range min="0" max="100" step="1" color="positive"  pin="true"value="50">
+        <ion-label range-left>
+          Glicemia Min
+        </ion-label>
+      </ion-range>
+    </ion-item>
+    <button id="objetivoGlicemico-button8" ion-button color="positive" block on-click="goToHome()">
+      Salvar Objetivo
+    </button>
+  </form>
+</ion-content>
