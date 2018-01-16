@@ -5,7 +5,7 @@
         <ion-icon name="close"></ion-icon>
       </button>
     </ion-buttons>
-    <ion-title>Horario da Aplicação</ion-title>
+    <ion-title>Adicionar Dados</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -15,24 +15,29 @@
       <ion-input type="text" placeholder="Title" [(ngModel)]="event.title"></ion-input>
     </ion-item>
 
-    <ion-item>
-      <ion-label>Inicio</ion-label>
-      <ion-datetime displayFormat="MM/DD/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="event.startTime" [min]="minDate"></ion-datetime>
-    </ion-item>
+
 
     <ion-item>
-      <ion-label>Final</ion-label>
-      <ion-datetime displayFormat="MM/DD/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="event.endTime" [min]="minDate"></ion-datetime>
-    </ion-item>
+         <ion-label>Inicio</ion-label>
+         <ion-datetime displayFormat="MM/DD/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="event.startTime" [min]="minDate"></ion-datetime>
+       </ion-item>
+
+       <ion-item>
+         <ion-label>Final</ion-label>
+         <ion-datetime displayFormat="MM/DD/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="event.endTime" [min]="minDate"></ion-datetime>
+       </ion-item>
 
 <!--
     <ion-item>
-      <ion-label>All Day?</ion-label>
-      <ion-checkbox [(ngModel)]="event.allDay"></ion-checkbox>
-    </ion-item>-->
+      <ion-label>Horario</ion-label>
+      <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm" [(ngModel)]="event.startTime" ></ion-datetime>
+    </ion-item>
+
+-->
+
   </ion-list>
 
   <button ion-button full icon-left (click)="save()">
-    <ion-icon name="checkmark"></ion-icon> Adicionar Medição
+    <ion-icon name="checkmark"></ion-icon> Salvar dados
   </button>
 </ion-content>
