@@ -13,15 +13,19 @@ import { CalcularDosePage } from '../pages/calcular-dose/calcular-dose';
 import { VisualizadorDeGrFicosPage } from '../pages/visualizador-de-gr-ficos/visualizador-de-gr-ficos';
 import { VisualizarTabelaResumoPage } from '../pages/visualizar-tabela-resumo/visualizar-tabela-resumo';
 import { CadastrosPage } from '../pages/cadastros/cadastros';
-import { GraficosPage } from '../pages/graficos/graficos';
+import { EmergenciaPage } from '../pages/emergecia/emergencia';
 import { InsulinaEmergencialPage } from '../pages/insulina-emergencial/insulina-emergencial';
 import { NgCalendarModule  } from 'ionic2-calendar';
 import { DoseDiariaPage } from '../pages/dose-diaria/dose-diaria';
-
-
+import { PerfilUsuarioPage } from '../pages/perfil-usuario/perfil-usuario';
+import { AjudaPage } from '../pages/ajuda/ajuda';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ChartsModule } from 'ng2-charts';
+import { LocalNotificationPage } from '../pages/local-notification/local-notification';
+import { LocalNotifications } from '@ionic-native/local-notifications';
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -35,11 +39,13 @@ import { ChartsModule } from 'ng2-charts';
     CalcularDosePage,
     VisualizadorDeGrFicosPage,
     VisualizarTabelaResumoPage,
-    GraficosPage,//botao de emergenia
+    EmergenciaPage,
     CadastrosPage,
-    GraficosPage,
     InsulinaEmergencialPage,
     DoseDiariaPage,
+    PerfilUsuarioPage,
+    LocalNotificationPage,
+    AjudaPage,
   ],
   imports: [
     NgCalendarModule,
@@ -60,16 +66,23 @@ import { ChartsModule } from 'ng2-charts';
     CalcularDosePage,
     VisualizadorDeGrFicosPage,
     VisualizarTabelaResumoPage,
-    GraficosPage,
+    EmergenciaPage,
     CadastrosPage,
-    GraficosPage,
     DoseDiariaPage,
-    InsulinaEmergencialPage
+    InsulinaEmergencialPage,
+    PerfilUsuarioPage,
+    LocalNotificationPage,
+    AjudaPage,
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    LocalNotifications,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
-export class AppModule {}
+export class AppModule {
+
+static teste = 'teste de variavel global';
+
+}

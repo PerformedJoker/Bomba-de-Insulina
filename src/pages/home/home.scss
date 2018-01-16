@@ -22,4 +22,10 @@ page-home {
         min-width: 50px;
     }
 }
+
+$fab-size: 60px;	//Width and height of the FAB button
+$fab-mini-size:	40px;	//Width and height of the FAB button mini
+$fab-content-margin:	10px;	//Margin of the FAB Container
+$fab-list-margin:	10px;	//Margin of the FAB List
+$fab-list-button-background-color: #f4f4f4; //Background color of the button in a list
 }

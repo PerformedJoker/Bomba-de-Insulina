@@ -1,14 +1,14 @@
 webpackJsonp([1],{
 
-/***/ 109:
+/***/ 110:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tabs_controller_tabs_controller__ = __webpack_require__(110);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__cadastrarUsuario_cadastrarUsuario__ = __webpack_require__(337);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tabs_controller_tabs_controller__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__cadastrarUsuario_cadastrarUsuario__ = __webpack_require__(340);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -49,17 +49,19 @@ LoginPage = __decorate([
 
 /***/ }),
 
-/***/ 110:
+/***/ 111:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsControllerPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__visualizar_tabela_resumo_visualizar_tabela_resumo__ = __webpack_require__(323);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__visualizador_de_gr_ficos_visualizador_de_gr_ficos__ = __webpack_require__(324);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__graficos_graficos__ = __webpack_require__(331);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__visualizar_tabela_resumo_visualizar_tabela_resumo__ = __webpack_require__(325);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__visualizador_de_gr_ficos_visualizador_de_gr_ficos__ = __webpack_require__(326);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__emergecia_emergencia__ = __webpack_require__(333);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_home__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__cadastros_cadastros__ = __webpack_require__(333);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__cadastros_cadastros__ = __webpack_require__(336);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__perfil_usuario_perfil_usuario__ = __webpack_require__(339);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_ionic_angular__ = __webpack_require__(9);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -75,34 +77,61 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var TabsControllerPage = (function () {
-    function TabsControllerPage() {
+    function TabsControllerPage(alertCtrl) {
+        this.alertCtrl = alertCtrl;
         this.tab1Root = __WEBPACK_IMPORTED_MODULE_4__home_home__["a" /* HomePage */];
         this.tab2Root = __WEBPACK_IMPORTED_MODULE_0__visualizar_tabela_resumo_visualizar_tabela_resumo__["a" /* VisualizarTabelaResumoPage */];
         this.tab3Root = __WEBPACK_IMPORTED_MODULE_1__visualizador_de_gr_ficos_visualizador_de_gr_ficos__["a" /* VisualizadorDeGrFicosPage */];
-        this.tab4Root = __WEBPACK_IMPORTED_MODULE_2__graficos_graficos__["a" /* GraficosPage */]; //Botão de emergência
+        this.tab4Root = __WEBPACK_IMPORTED_MODULE_2__emergecia_emergencia__["a" /* EmergenciaPage */]; //Botão de emergência
         this.tab5Root = __WEBPACK_IMPORTED_MODULE_5__cadastros_cadastros__["a" /* CadastrosPage */];
+        this.tab6Root = __WEBPACK_IMPORTED_MODULE_6__perfil_usuario_perfil_usuario__["a" /* PerfilUsuarioPage */];
     }
+    TabsControllerPage.prototype.showConfirm = function (bool) {
+        if (true) {
+            var confirm_1 = this.alertCtrl.create({
+                title: 'Botão de Emergencia ',
+                message: 'Você deseja ligar para a Emergencia ?(911)',
+                buttons: [
+                    {
+                        text: 'Não',
+                        handler: function () {
+                            console.log('Disagree clicked');
+                        }
+                    },
+                    {
+                        text: 'Ligar',
+                        handler: function () {
+                            console.log('Agree clicked');
+                        }
+                    }
+                ]
+            });
+            confirm_1.present();
+        }
+    };
     return TabsControllerPage;
 }());
 TabsControllerPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["Component"])({template:/*ion-inline-start:"/Users/alexsandrosaraiva/Downloads/SmartGlic/src/pages/tabs-controller/tabs-controller.html"*/'<ion-tabs color="dark">\n  <ion-tab [root]="tab1Root" tabTitle="Início" tabIcon="home" id="person"></ion-tab>\n  <ion-tab [root]="tab2Root" tabTitle="Resumos" tabIcon="clipboard" id="person"></ion-tab>\n  <ion-tab [root]="tab3Root" tabTitle="Graficos" tabIcon="podium" id="person"></ion-tab>\n  <ion-tab [root]="tab4Root" tabTitle="Emergencia" tabIcon="warning" id="person"></ion-tab>\n  <ion-tab [root]="tab5Root" tabTitle="Cadastro" tabIcon="create" id="tabsController-tab4"></ion-tab>\n</ion-tabs>\n'/*ion-inline-end:"/Users/alexsandrosaraiva/Downloads/SmartGlic/src/pages/tabs-controller/tabs-controller.html"*/
+    Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["Component"])({template:/*ion-inline-start:"/Users/alexsandrosaraiva/Downloads/SmartGlic/src/pages/tabs-controller/tabs-controller.html"*/'<ion-tabs color="dark">\n  <ion-tab [root]="tab1Root" tabTitle="Início" tabIcon="home" id="person"></ion-tab>\n  <ion-tab [root]="tab2Root" tabTitle="Resumos" tabIcon="clipboard" id="person"></ion-tab>\n  <ion-tab [root]="tab3Root" tabTitle="Graficos" tabIcon="podium" id="person"></ion-tab>\n  <ion-tab [root]="tab4Root" tabTitle="Emergencia" tabIcon="warning" id="person" on-click="showConfirm(true)"></ion-tab>\n  <ion-tab [root]="tab5Root" tabTitle="Cadastro" tabIcon="create" id="tabsController-tab4"></ion-tab>\n  <ion-tab [root]="tab6Root" tabTitle="Perfil" tabIcon="contact" id="tabsController-tab6"></ion-tab>\n</ion-tabs>\n'/*ion-inline-end:"/Users/alexsandrosaraiva/Downloads/SmartGlic/src/pages/tabs-controller/tabs-controller.html"*/
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_7_ionic_angular__["a" /* AlertController */]])
 ], TabsControllerPage);
 
 //# sourceMappingURL=tabs-controller.js.map
 
 /***/ }),
 
-/***/ 111:
+/***/ 112:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CadastrarTerapiaPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastrar_terapia2_cadastrar_terapia2__ = __webpack_require__(332);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastrar_terapia2_cadastrar_terapia2__ = __webpack_require__(334);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_home__ = __webpack_require__(58);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -144,7 +173,87 @@ CadastrarTerapiaPage = __decorate([
 
 /***/ }),
 
-/***/ 119:
+/***/ 113:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DoseDiariaPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_moment__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_moment__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var DoseDiariaPage = (function () {
+    function DoseDiariaPage(navCtrl, modalCtrl, alertCtrl) {
+        this.navCtrl = navCtrl;
+        this.modalCtrl = modalCtrl;
+        this.alertCtrl = alertCtrl;
+        this.eventSource = [];
+        this.selectedDay = new Date();
+        this.calendar = {
+            mode: 'month',
+            currentDate: new Date()
+        };
+    }
+    DoseDiariaPage.prototype.addEvent = function () {
+        var _this = this;
+        var modal = this.modalCtrl.create('EventModalPage', { selectedDay: this.selectedDay });
+        modal.present();
+        modal.onDidDismiss(function (data) {
+            if (data) {
+                var eventData = data;
+                eventData.startTime = new Date(data.startTime);
+                eventData.endTime = new Date(data.endTime);
+                var events_1 = _this.eventSource;
+                events_1.push(eventData);
+                _this.eventSource = [];
+                setTimeout(function () {
+                    _this.eventSource = events_1;
+                });
+            }
+        });
+    };
+    DoseDiariaPage.prototype.onViewTitleChanged = function (title) {
+        this.viewTitle = title;
+    };
+    DoseDiariaPage.prototype.onEventSelected = function (event) {
+        var start = __WEBPACK_IMPORTED_MODULE_2_moment__(event.startTime).format('LLLL');
+        var end = __WEBPACK_IMPORTED_MODULE_2_moment__(event.endTime).format('LLLL');
+        var alert = this.alertCtrl.create({
+            title: '' + event.title,
+            subTitle: 'Inicia: ' + start + '<br>Termina: ' + end,
+            buttons: ['OK']
+        });
+        alert.present();
+    };
+    DoseDiariaPage.prototype.onTimeSelected = function (ev) {
+        this.selectedDay = ev.selectedTime;
+    };
+    return DoseDiariaPage;
+}());
+DoseDiariaPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'page-dose-diaria',template:/*ion-inline-start:"/Users/alexsandrosaraiva/Downloads/SmartGlic/src/pages/dose-diaria/dose-diaria.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>\n      {{ viewTitle }}\n    </ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only (click)="addEvent()">\n        <ion-icon name="add"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n<calendar [eventSource]="eventSource"\n        [calendarMode]="calendar.mode"\n        [currentDate]="calendar.currentDate"\n        (onEventSelected)="onEventSelected($event)"\n        (onTitleChanged)="onViewTitleChanged($event)"\n        (onTimeSelected)="onTimeSelected($event)"\n        step="30"\n        class="calendar">\n      </calendar>\n</ion-content>\n'/*ion-inline-end:"/Users/alexsandrosaraiva/Downloads/SmartGlic/src/pages/dose-diaria/dose-diaria.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
+], DoseDiariaPage);
+
+//# sourceMappingURL=dose-diaria.js.map
+
+/***/ }),
+
+/***/ 122:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -157,16 +266,16 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 119;
+webpackEmptyAsyncContext.id = 122;
 
 /***/ }),
 
-/***/ 160:
+/***/ 163:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"../pages/event-modal/event-modal.module": [
-		469,
+		472,
 		0
 	]
 };
@@ -181,18 +290,18 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 160;
+webpackAsyncContext.id = 163;
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 323:
+/***/ 325:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VisualizarTabelaResumoPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -221,14 +330,14 @@ VisualizarTabelaResumoPage = __decorate([
 
 /***/ }),
 
-/***/ 324:
+/***/ 326:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VisualizadorDeGrFicosPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_chart_js__ = __webpack_require__(325);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_chart_js__ = __webpack_require__(327);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_chart_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_chart_js__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -368,13 +477,13 @@ VisualizadorDeGrFicosPage = __decorate([
 
 /***/ }),
 
-/***/ 331:
+/***/ 333:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GraficosPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EmergenciaPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -387,13 +496,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var GraficosPage = (function () {
-    function GraficosPage(alertCtrl, navCtrl) {
+var EmergenciaPage = (function () {
+    function EmergenciaPage(alertCtrl, navCtrl, viewCtrl) {
         this.alertCtrl = alertCtrl;
         this.navCtrl = navCtrl;
+        this.viewCtrl = viewCtrl;
         this.showConfirm();
+        this.navCtrl.popToRoot();
     }
-    GraficosPage.prototype.showConfirm = function () {
+    EmergenciaPage.prototype.showConfirm = function () {
+        var _this = this;
         var confirm = this.alertCtrl.create({
             title: 'Botão de Emergencia ',
             message: 'Você deseja ligar para a Emergencia ?(911)',
@@ -402,7 +514,7 @@ var GraficosPage = (function () {
                     text: 'Não',
                     handler: function () {
                         console.log('Disagree clicked');
-                        //this.navCtrl.(HomePage);
+                        _this.viewCtrl.dismiss();
                     }
                 },
                 {
@@ -415,26 +527,29 @@ var GraficosPage = (function () {
         });
         confirm.present();
     };
-    return GraficosPage;
+    EmergenciaPage.prototype.cancel = function () {
+        this.viewCtrl.dismiss();
+    };
+    return EmergenciaPage;
 }());
-GraficosPage = __decorate([
+EmergenciaPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'page-graficos',template:/*ion-inline-start:"/Users/alexsandrosaraiva/Downloads/SmartGlic/src/pages/graficos/graficos.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title >\n      Emergência\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page17">\n<img src="assets/img/C3EQhYtxSN6fsmJC7T5a_smart_Glicemia.jpg" style="display:block;max-width:45%;max-height:40%;margin-left:auto;margin-right:auto;border-color:orange;" />\n</ion-content>\n'/*ion-inline-end:"/Users/alexsandrosaraiva/Downloads/SmartGlic/src/pages/graficos/graficos.html"*/
+        selector: 'page-emergencia',template:/*ion-inline-start:"/Users/alexsandrosaraiva/Downloads/SmartGlic/src/pages/emergecia/emergencia.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title >\n      Emergência\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page17">\n<img src="assets/img/C3EQhYtxSN6fsmJC7T5a_smart_Glicemia.jpg" style="display:block;max-width:45%;max-height:40%;margin-left:auto;margin-right:auto;border-color:orange;" />\n</ion-content>\n'/*ion-inline-end:"/Users/alexsandrosaraiva/Downloads/SmartGlic/src/pages/emergecia/emergencia.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]])
-], GraficosPage);
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ViewController */]])
+], EmergenciaPage);
 
-//# sourceMappingURL=graficos.js.map
+//# sourceMappingURL=emergencia.js.map
 
 /***/ }),
 
-/***/ 332:
+/***/ 334:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CadastrarTerapia2Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(58);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -470,17 +585,52 @@ CadastrarTerapia2Page = __decorate([
 
 /***/ }),
 
-/***/ 333:
+/***/ 335:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AjudaPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var AjudaPage = (function () {
+    function AjudaPage(navCtrl) {
+        this.navCtrl = navCtrl;
+    }
+    return AjudaPage;
+}());
+AjudaPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'ajuda',template:/*ion-inline-start:"/Users/alexsandrosaraiva/Downloads/SmartGlic/src/pages/ajuda/ajuda.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>\n      Ajuda e informações\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page21">\n  <img src="assets/img/C3EQhYtxSN6fsmJC7T5a_smart_Glicemia.jpg" style="display:block;max-width:40%;max-height:40%;margin-left:auto;margin-right:auto;" />\n  <ion-card>\n    <ion-card-header>\n      Opções de Ajuda\n    </ion-card-header>\n\n    <ion-list>\n      <button ion-item>\n        <ion-icon name="cart" item-start></ion-icon>\n        Shopping\n      </button>\n\n      <button ion-item>\n        <ion-icon name="medical" item-start></ion-icon>\n        Hospital\n      </button>\n\n      <button ion-item>\n        <ion-icon name="cafe" item-start></ion-icon>\n        Cafe\n      </button>\n\n      <button ion-item>\n        <ion-icon name="paw" item-start></ion-icon>\n        Dog Park\n      </button>\n\n      <button ion-item>\n        <ion-icon name="beer" item-start></ion-icon>\n        Pub\n      </button>\n\n      <button ion-item>\n        <ion-icon name="planet" item-start></ion-icon>\n        Space\n      </button>\n\n    </ion-list>\n  </ion-card>\n\n</ion-content>\n'/*ion-inline-end:"/Users/alexsandrosaraiva/Downloads/SmartGlic/src/pages/ajuda/ajuda.html"*/
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]])
+], AjudaPage);
+
+//# sourceMappingURL=ajuda.js.map
+
+/***/ }),
+
+/***/ 336:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CadastrosPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastrar_terapia_cadastrar_terapia__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__insulina_emergencial_insulina_emergencial__ = __webpack_require__(334);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__objetivo_glicemico_objetivo_glicemico__ = __webpack_require__(335);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__dose_diaria_dose_diaria__ = __webpack_require__(336);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastrar_terapia_cadastrar_terapia__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__insulina_emergencial_insulina_emergencial__ = __webpack_require__(337);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__objetivo_glicemico_objetivo_glicemico__ = __webpack_require__(338);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__dose_diaria_dose_diaria__ = __webpack_require__(113);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -524,7 +674,7 @@ var CadastrosPage = (function () {
 }());
 CadastrosPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'page-cadastros',template:/*ion-inline-start:"/Users/alexsandrosaraiva/Downloads/SmartGlic/src/pages/cadastros/cadastros.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Cadastros\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page16">\n  <img src="assets/img/C3EQhYtxSN6fsmJC7T5a_smart_Glicemia.jpg" style="display:block;max-width:45%;max-height:40%;margin-left:auto;margin-right:auto;border-color:orange;" />\n<ion-list id="cadastros-list5">\n    <ion-item-sliding>\n      <ion-item color="none" on-click="goToCadastrarTerapia()" id="cadastros-list-item9">\n        <ion-icon name="medical" item-left></ion-icon>\n        Tratamento\n        <ion-icon name="add" item-right></ion-icon>\n      </ion-item>\n      <ion-item-options side="left">\n        <button ion-button color="positive"></button>\n      </ion-item-options>\n    </ion-item-sliding>\n    <ion-item color="none" href-inappbrowser="page18" on-click="goToDoseInsulina()" id="cadastros-list-item7">\n      <ion-icon name="pulse" item-left></ion-icon>\n      Dose de Insulina\n      <ion-icon name="add" item-right></ion-icon>\n    </ion-item>\n    <ion-item color="none" on-click="goToInsulinaEmergencial()" id="cadastros-list-item8">\n      <ion-icon name="medkit" item-left></ion-icon>\n      Insulina Emergencia\n      <ion-icon name="add" item-right></ion-icon>\n    </ion-item>\n    <ion-item color="none" on-click="goToObjetivoGlicemico()" id="cadastros-list-item10">\n      <ion-icon name="body" item-left></ion-icon>\n      Objetivo Glicemico\n      <ion-icon name="add" item-right></ion-icon>\n    </ion-item>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/alexsandrosaraiva/Downloads/SmartGlic/src/pages/cadastros/cadastros.html"*/
+        selector: 'page-cadastros',template:/*ion-inline-start:"/Users/alexsandrosaraiva/Downloads/SmartGlic/src/pages/cadastros/cadastros.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Cadastros\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page16">\n  <img src="assets/img/C3EQhYtxSN6fsmJC7T5a_smart_Glicemia.jpg" style="display:block;max-width:45%;max-height:40%;margin-left:auto;margin-right:auto;border-color:orange;" />\n<ion-list id="cadastros-list5">\n    <ion-item-sliding>\n      <ion-item color="none" on-click="goToCadastrarTerapia()" id="cadastros-list-item9">\n        <ion-icon name="medical" item-left></ion-icon>\n        Tratamento\n        <ion-icon name="add" item-right></ion-icon>\n      </ion-item>\n      <ion-item-options side="left">\n        <button ion-button color="positive"></button>\n      </ion-item-options>\n    </ion-item-sliding>\n    <ion-item color="none" href-inappbrowser="page18" on-click="goToDoseInsulina()" id="cadastros-list-item7">\n      <ion-icon name="ios-water" item-left></ion-icon>\n      Dose de Insulina\n      <ion-icon name="add" item-right></ion-icon>\n    </ion-item>\n    <ion-item color="none" on-click="goToInsulinaEmergencial()" id="cadastros-list-item8">\n      <ion-icon name="medkit" item-left></ion-icon>\n      Insulina Emergencia\n      <ion-icon name="add" item-right></ion-icon>\n    </ion-item>\n    <ion-item color="none" on-click="goToObjetivoGlicemico()" id="cadastros-list-item10">\n      <ion-icon name="body" item-left></ion-icon>\n      Objetivo Glicemico\n      <ion-icon name="add" item-right></ion-icon>\n    </ion-item>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/alexsandrosaraiva/Downloads/SmartGlic/src/pages/cadastros/cadastros.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]])
 ], CadastrosPage);
@@ -533,13 +683,13 @@ CadastrosPage = __decorate([
 
 /***/ }),
 
-/***/ 334:
+/***/ 337:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InsulinaEmergencialPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -568,13 +718,13 @@ InsulinaEmergencialPage = __decorate([
 
 /***/ }),
 
-/***/ 335:
+/***/ 338:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ObjetivoGlicemicoPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -603,15 +753,13 @@ ObjetivoGlicemicoPage = __decorate([
 
 /***/ }),
 
-/***/ 336:
+/***/ 339:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DoseDiariaPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PerfilUsuarioPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_moment__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_moment__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -623,74 +771,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-
-var DoseDiariaPage = (function () {
-    function DoseDiariaPage(navCtrl, modalCtrl, alertCtrl) {
+var PerfilUsuarioPage = (function () {
+    function PerfilUsuarioPage(navCtrl) {
         this.navCtrl = navCtrl;
-        this.modalCtrl = modalCtrl;
-        this.alertCtrl = alertCtrl;
-        this.eventSource = [];
-        this.selectedDay = new Date();
-        this.calendar = {
-            mode: 'month',
-            currentDate: new Date()
-        };
     }
-    DoseDiariaPage.prototype.addEvent = function () {
-        var _this = this;
-        var modal = this.modalCtrl.create('EventModalPage', { selectedDay: this.selectedDay });
-        modal.present();
-        modal.onDidDismiss(function (data) {
-            if (data) {
-                var eventData = data;
-                eventData.startTime = new Date(data.startTime);
-                eventData.endTime = new Date(data.endTime);
-                var events_1 = _this.eventSource;
-                events_1.push(eventData);
-                _this.eventSource = [];
-                setTimeout(function () {
-                    _this.eventSource = events_1;
-                });
-            }
-        });
-    };
-    DoseDiariaPage.prototype.onViewTitleChanged = function (title) {
-        this.viewTitle = title;
-    };
-    DoseDiariaPage.prototype.onEventSelected = function (event) {
-        var start = __WEBPACK_IMPORTED_MODULE_2_moment__(event.startTime).format('LLLL');
-        var end = __WEBPACK_IMPORTED_MODULE_2_moment__(event.endTime).format('LLLL');
-        var alert = this.alertCtrl.create({
-            title: '' + event.title,
-            subTitle: 'From: ' + start + '<br>To: ' + end,
-            buttons: ['OK']
-        });
-        alert.present();
-    };
-    DoseDiariaPage.prototype.onTimeSelected = function (ev) {
-        this.selectedDay = ev.selectedTime;
-    };
-    return DoseDiariaPage;
+    return PerfilUsuarioPage;
 }());
-DoseDiariaPage = __decorate([
+PerfilUsuarioPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'page-dose-diaria',template:/*ion-inline-start:"/Users/alexsandrosaraiva/Downloads/SmartGlic/src/pages/dose-diaria/dose-diaria.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>\n      {{ viewTitle }}\n    </ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only (click)="addEvent()">\n        <ion-icon name="add"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n<calendar [eventSource]="eventSource"\n        [calendarMode]="calendar.mode"\n        [currentDate]="calendar.currentDate"\n        (onEventSelected)="onEventSelected($event)"\n        (onTitleChanged)="onViewTitleChanged($event)"\n        (onTimeSelected)="onTimeSelected($event)"\n        step="30"\n        class="calendar">\n      </calendar>\n</ion-content>\n'/*ion-inline-end:"/Users/alexsandrosaraiva/Downloads/SmartGlic/src/pages/dose-diaria/dose-diaria.html"*/,
+        selector: 'perfil-usuario',template:/*ion-inline-start:"/Users/alexsandrosaraiva/Downloads/SmartGlic/src/pages/perfil-usuario/perfil-usuario.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>\n      Perfil usuário\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page18">\n  <img src="assets/img/C3EQhYtxSN6fsmJC7T5a_smart_Glicemia.jpg" style="display:block;max-width:40%;max-height:40%;margin-left:auto;margin-right:auto;" />\n  <ion-list id="perfilUsuRio-list11">\n    <ion-item color="dark" id="perfilUsuRio-list-item12">\n      <ion-icon name="contact" item-left></ion-icon>\n      Dados do Usuário\n    </ion-item>\n  </ion-list>\n  <ion-list id="perfilUsuRio-list12">\n    <ion-item color="none" id="perfilUsuRio-list-item17">\n      nome\n    </ion-item>\n    <ion-item color="none" id="perfilUsuRio-list-item18">\n      email\n    </ion-item>\n    <ion-item color="none" id="perfilUsuRio-list-item19">\n      Endereço\n    </ion-item>\n    <ion-item color="none" id="perfilUsuRio-list-item20">\n      Tratamento\n    </ion-item>\n    <ion-item color="none" id="perfilUsuRio-list-item21">\n      Tipo de Insulina\n    </ion-item>\n    <ion-item color="none" id="perfilUsuRio-list-item22">\n      Objetivo Glicêmico Ideal\n    </ion-item>\n    <ion-item>\n      <!-- Sem item, codigo para acrescentar uma linha ao final do formulário-->\n    </ion-item>\n\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/alexsandrosaraiva/Downloads/SmartGlic/src/pages/perfil-usuario/perfil-usuario.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
-], DoseDiariaPage);
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]])
+], PerfilUsuarioPage);
 
-//# sourceMappingURL=dose-diaria.js.map
+//# sourceMappingURL=perfil-usuario.js.map
 
 /***/ }),
 
-/***/ 337:
+/***/ 340:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CadastrarUsuarioPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login__ = __webpack_require__(109);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login__ = __webpack_require__(110);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -723,13 +828,13 @@ CadastrarUsuarioPage = __decorate([
 
 /***/ }),
 
-/***/ 338:
+/***/ 341:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(339);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(357);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(342);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(360);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -737,34 +842,38 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 357:
+/***/ 360:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(400);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_tabs_controller_tabs_controller__ = __webpack_require__(110);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_login_login__ = __webpack_require__(109);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_cadastrarUsuario_cadastrarUsuario__ = __webpack_require__(337);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(411);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_tabs_controller_tabs_controller__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_login_login__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_cadastrarUsuario_cadastrarUsuario__ = __webpack_require__(340);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_home_home__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_cadastrar_terapia_cadastrar_terapia__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_cadastrar_terapia2_cadastrar_terapia2__ = __webpack_require__(332);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_objetivo_glicemico_objetivo_glicemico__ = __webpack_require__(335);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_calcular_dose_calcular_dose__ = __webpack_require__(454);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_visualizador_de_gr_ficos_visualizador_de_gr_ficos__ = __webpack_require__(324);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_visualizar_tabela_resumo_visualizar_tabela_resumo__ = __webpack_require__(323);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_cadastros_cadastros__ = __webpack_require__(333);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_graficos_graficos__ = __webpack_require__(331);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_insulina_emergencial_insulina_emergencial__ = __webpack_require__(334);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_ionic2_calendar__ = __webpack_require__(456);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_dose_diaria_dose_diaria__ = __webpack_require__(336);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__ionic_native_status_bar__ = __webpack_require__(319);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__ionic_native_splash_screen__ = __webpack_require__(322);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21_ng2_charts__ = __webpack_require__(467);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21_ng2_charts___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_21_ng2_charts__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_cadastrar_terapia_cadastrar_terapia__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_cadastrar_terapia2_cadastrar_terapia2__ = __webpack_require__(334);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_objetivo_glicemico_objetivo_glicemico__ = __webpack_require__(338);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_calcular_dose_calcular_dose__ = __webpack_require__(457);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_visualizador_de_gr_ficos_visualizador_de_gr_ficos__ = __webpack_require__(326);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_visualizar_tabela_resumo_visualizar_tabela_resumo__ = __webpack_require__(325);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_cadastros_cadastros__ = __webpack_require__(336);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_emergecia_emergencia__ = __webpack_require__(333);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_insulina_emergencial_insulina_emergencial__ = __webpack_require__(337);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_ionic2_calendar__ = __webpack_require__(458);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_dose_diaria_dose_diaria__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_perfil_usuario_perfil_usuario__ = __webpack_require__(339);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_ajuda_ajuda__ = __webpack_require__(335);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__ionic_native_status_bar__ = __webpack_require__(323);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__ionic_native_splash_screen__ = __webpack_require__(324);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_ng2_charts__ = __webpack_require__(469);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_ng2_charts___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_23_ng2_charts__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_local_notification_local_notification__ = __webpack_require__(471);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__ionic_native_local_notifications__ = __webpack_require__(114);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -793,11 +902,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
+
+
 var AppModule = (function () {
     function AppModule() {
     }
     return AppModule;
 }());
+AppModule.teste = 'teste de variavel global';
 AppModule = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
         declarations: [
@@ -812,16 +926,18 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_11__pages_calcular_dose_calcular_dose__["a" /* CalcularDosePage */],
             __WEBPACK_IMPORTED_MODULE_12__pages_visualizador_de_gr_ficos_visualizador_de_gr_ficos__["a" /* VisualizadorDeGrFicosPage */],
             __WEBPACK_IMPORTED_MODULE_13__pages_visualizar_tabela_resumo_visualizar_tabela_resumo__["a" /* VisualizarTabelaResumoPage */],
-            __WEBPACK_IMPORTED_MODULE_15__pages_graficos_graficos__["a" /* GraficosPage */],
+            __WEBPACK_IMPORTED_MODULE_15__pages_emergecia_emergencia__["a" /* EmergenciaPage */],
             __WEBPACK_IMPORTED_MODULE_14__pages_cadastros_cadastros__["a" /* CadastrosPage */],
-            __WEBPACK_IMPORTED_MODULE_15__pages_graficos_graficos__["a" /* GraficosPage */],
             __WEBPACK_IMPORTED_MODULE_16__pages_insulina_emergencial_insulina_emergencial__["a" /* InsulinaEmergencialPage */],
             __WEBPACK_IMPORTED_MODULE_18__pages_dose_diaria_dose_diaria__["a" /* DoseDiariaPage */],
+            __WEBPACK_IMPORTED_MODULE_19__pages_perfil_usuario_perfil_usuario__["a" /* PerfilUsuarioPage */],
+            __WEBPACK_IMPORTED_MODULE_24__pages_local_notification_local_notification__["a" /* LocalNotificationPage */],
+            __WEBPACK_IMPORTED_MODULE_20__pages_ajuda_ajuda__["a" /* AjudaPage */],
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_17_ionic2_calendar__["a" /* NgCalendarModule */],
             __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_21_ng2_charts__["ChartsModule"],
+            __WEBPACK_IMPORTED_MODULE_23_ng2_charts__["ChartsModule"],
             __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], { tabsPlacement: 'bottom', backButtonText: '' }, {
                 links: [
                     { loadChildren: '../pages/event-modal/event-modal.module#EventModalPageModule', name: 'EventModalPage', segment: 'event-modal', priority: 'low', defaultHistory: [] }
@@ -841,15 +957,18 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_11__pages_calcular_dose_calcular_dose__["a" /* CalcularDosePage */],
             __WEBPACK_IMPORTED_MODULE_12__pages_visualizador_de_gr_ficos_visualizador_de_gr_ficos__["a" /* VisualizadorDeGrFicosPage */],
             __WEBPACK_IMPORTED_MODULE_13__pages_visualizar_tabela_resumo_visualizar_tabela_resumo__["a" /* VisualizarTabelaResumoPage */],
-            __WEBPACK_IMPORTED_MODULE_15__pages_graficos_graficos__["a" /* GraficosPage */],
+            __WEBPACK_IMPORTED_MODULE_15__pages_emergecia_emergencia__["a" /* EmergenciaPage */],
             __WEBPACK_IMPORTED_MODULE_14__pages_cadastros_cadastros__["a" /* CadastrosPage */],
-            __WEBPACK_IMPORTED_MODULE_15__pages_graficos_graficos__["a" /* GraficosPage */],
             __WEBPACK_IMPORTED_MODULE_18__pages_dose_diaria_dose_diaria__["a" /* DoseDiariaPage */],
-            __WEBPACK_IMPORTED_MODULE_16__pages_insulina_emergencial_insulina_emergencial__["a" /* InsulinaEmergencialPage */]
+            __WEBPACK_IMPORTED_MODULE_16__pages_insulina_emergencial_insulina_emergencial__["a" /* InsulinaEmergencialPage */],
+            __WEBPACK_IMPORTED_MODULE_19__pages_perfil_usuario_perfil_usuario__["a" /* PerfilUsuarioPage */],
+            __WEBPACK_IMPORTED_MODULE_24__pages_local_notification_local_notification__["a" /* LocalNotificationPage */],
+            __WEBPACK_IMPORTED_MODULE_20__pages_ajuda_ajuda__["a" /* AjudaPage */],
         ],
         providers: [
-            __WEBPACK_IMPORTED_MODULE_19__ionic_native_status_bar__["a" /* StatusBar */],
-            __WEBPACK_IMPORTED_MODULE_20__ionic_native_splash_screen__["a" /* SplashScreen */],
+            __WEBPACK_IMPORTED_MODULE_21__ionic_native_status_bar__["a" /* StatusBar */],
+            __WEBPACK_IMPORTED_MODULE_22__ionic_native_splash_screen__["a" /* SplashScreen */],
+            __WEBPACK_IMPORTED_MODULE_25__ionic_native_local_notifications__["a" /* LocalNotifications */],
             { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ErrorHandler"], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicErrorHandler */] }
         ]
     })
@@ -859,248 +978,248 @@ AppModule = __decorate([
 
 /***/ }),
 
-/***/ 382:
+/***/ 385:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./af": 161,
-	"./af.js": 161,
-	"./ar": 162,
-	"./ar-dz": 163,
-	"./ar-dz.js": 163,
-	"./ar-kw": 164,
-	"./ar-kw.js": 164,
-	"./ar-ly": 165,
-	"./ar-ly.js": 165,
-	"./ar-ma": 166,
-	"./ar-ma.js": 166,
-	"./ar-sa": 167,
-	"./ar-sa.js": 167,
-	"./ar-tn": 168,
-	"./ar-tn.js": 168,
-	"./ar.js": 162,
-	"./az": 169,
-	"./az.js": 169,
-	"./be": 170,
-	"./be.js": 170,
-	"./bg": 171,
-	"./bg.js": 171,
-	"./bm": 172,
-	"./bm.js": 172,
-	"./bn": 173,
-	"./bn.js": 173,
-	"./bo": 174,
-	"./bo.js": 174,
-	"./br": 175,
-	"./br.js": 175,
-	"./bs": 176,
-	"./bs.js": 176,
-	"./ca": 177,
-	"./ca.js": 177,
-	"./cs": 178,
-	"./cs.js": 178,
-	"./cv": 179,
-	"./cv.js": 179,
-	"./cy": 180,
-	"./cy.js": 180,
-	"./da": 181,
-	"./da.js": 181,
-	"./de": 182,
-	"./de-at": 183,
-	"./de-at.js": 183,
-	"./de-ch": 184,
-	"./de-ch.js": 184,
-	"./de.js": 182,
-	"./dv": 185,
-	"./dv.js": 185,
-	"./el": 186,
-	"./el.js": 186,
-	"./en-au": 187,
-	"./en-au.js": 187,
-	"./en-ca": 188,
-	"./en-ca.js": 188,
-	"./en-gb": 189,
-	"./en-gb.js": 189,
-	"./en-ie": 190,
-	"./en-ie.js": 190,
-	"./en-nz": 191,
-	"./en-nz.js": 191,
-	"./eo": 192,
-	"./eo.js": 192,
-	"./es": 193,
-	"./es-do": 194,
-	"./es-do.js": 194,
-	"./es-us": 195,
-	"./es-us.js": 195,
-	"./es.js": 193,
-	"./et": 196,
-	"./et.js": 196,
-	"./eu": 197,
-	"./eu.js": 197,
-	"./fa": 198,
-	"./fa.js": 198,
-	"./fi": 199,
-	"./fi.js": 199,
-	"./fo": 200,
-	"./fo.js": 200,
-	"./fr": 201,
-	"./fr-ca": 202,
-	"./fr-ca.js": 202,
-	"./fr-ch": 203,
-	"./fr-ch.js": 203,
-	"./fr.js": 201,
-	"./fy": 204,
-	"./fy.js": 204,
-	"./gd": 205,
-	"./gd.js": 205,
-	"./gl": 206,
-	"./gl.js": 206,
-	"./gom-latn": 207,
-	"./gom-latn.js": 207,
-	"./gu": 208,
-	"./gu.js": 208,
-	"./he": 209,
-	"./he.js": 209,
-	"./hi": 210,
-	"./hi.js": 210,
-	"./hr": 211,
-	"./hr.js": 211,
-	"./hu": 212,
-	"./hu.js": 212,
-	"./hy-am": 213,
-	"./hy-am.js": 213,
-	"./id": 214,
-	"./id.js": 214,
-	"./is": 215,
-	"./is.js": 215,
-	"./it": 216,
-	"./it.js": 216,
-	"./ja": 217,
-	"./ja.js": 217,
-	"./jv": 218,
-	"./jv.js": 218,
-	"./ka": 219,
-	"./ka.js": 219,
-	"./kk": 220,
-	"./kk.js": 220,
-	"./km": 221,
-	"./km.js": 221,
-	"./kn": 222,
-	"./kn.js": 222,
-	"./ko": 223,
-	"./ko.js": 223,
-	"./ky": 224,
-	"./ky.js": 224,
-	"./lb": 225,
-	"./lb.js": 225,
-	"./lo": 226,
-	"./lo.js": 226,
-	"./lt": 227,
-	"./lt.js": 227,
-	"./lv": 228,
-	"./lv.js": 228,
-	"./me": 229,
-	"./me.js": 229,
-	"./mi": 230,
-	"./mi.js": 230,
-	"./mk": 231,
-	"./mk.js": 231,
-	"./ml": 232,
-	"./ml.js": 232,
-	"./mr": 233,
-	"./mr.js": 233,
-	"./ms": 234,
-	"./ms-my": 235,
-	"./ms-my.js": 235,
-	"./ms.js": 234,
-	"./mt": 236,
-	"./mt.js": 236,
-	"./my": 237,
-	"./my.js": 237,
-	"./nb": 238,
-	"./nb.js": 238,
-	"./ne": 239,
-	"./ne.js": 239,
-	"./nl": 240,
-	"./nl-be": 241,
-	"./nl-be.js": 241,
-	"./nl.js": 240,
-	"./nn": 242,
-	"./nn.js": 242,
-	"./pa-in": 243,
-	"./pa-in.js": 243,
-	"./pl": 244,
-	"./pl.js": 244,
-	"./pt": 245,
-	"./pt-br": 246,
-	"./pt-br.js": 246,
-	"./pt.js": 245,
-	"./ro": 247,
-	"./ro.js": 247,
-	"./ru": 248,
-	"./ru.js": 248,
-	"./sd": 249,
-	"./sd.js": 249,
-	"./se": 250,
-	"./se.js": 250,
-	"./si": 251,
-	"./si.js": 251,
-	"./sk": 252,
-	"./sk.js": 252,
-	"./sl": 253,
-	"./sl.js": 253,
-	"./sq": 254,
-	"./sq.js": 254,
-	"./sr": 255,
-	"./sr-cyrl": 256,
-	"./sr-cyrl.js": 256,
-	"./sr.js": 255,
-	"./ss": 257,
-	"./ss.js": 257,
-	"./sv": 258,
-	"./sv.js": 258,
-	"./sw": 259,
-	"./sw.js": 259,
-	"./ta": 260,
-	"./ta.js": 260,
-	"./te": 261,
-	"./te.js": 261,
-	"./tet": 262,
-	"./tet.js": 262,
-	"./th": 263,
-	"./th.js": 263,
-	"./tl-ph": 264,
-	"./tl-ph.js": 264,
-	"./tlh": 265,
-	"./tlh.js": 265,
-	"./tr": 266,
-	"./tr.js": 266,
-	"./tzl": 267,
-	"./tzl.js": 267,
-	"./tzm": 268,
-	"./tzm-latn": 269,
-	"./tzm-latn.js": 269,
-	"./tzm.js": 268,
-	"./uk": 270,
-	"./uk.js": 270,
-	"./ur": 271,
-	"./ur.js": 271,
-	"./uz": 272,
-	"./uz-latn": 273,
-	"./uz-latn.js": 273,
-	"./uz.js": 272,
-	"./vi": 274,
-	"./vi.js": 274,
-	"./x-pseudo": 275,
-	"./x-pseudo.js": 275,
-	"./yo": 276,
-	"./yo.js": 276,
-	"./zh-cn": 277,
-	"./zh-cn.js": 277,
-	"./zh-hk": 278,
-	"./zh-hk.js": 278,
-	"./zh-tw": 279,
-	"./zh-tw.js": 279
+	"./af": 164,
+	"./af.js": 164,
+	"./ar": 165,
+	"./ar-dz": 166,
+	"./ar-dz.js": 166,
+	"./ar-kw": 167,
+	"./ar-kw.js": 167,
+	"./ar-ly": 168,
+	"./ar-ly.js": 168,
+	"./ar-ma": 169,
+	"./ar-ma.js": 169,
+	"./ar-sa": 170,
+	"./ar-sa.js": 170,
+	"./ar-tn": 171,
+	"./ar-tn.js": 171,
+	"./ar.js": 165,
+	"./az": 172,
+	"./az.js": 172,
+	"./be": 173,
+	"./be.js": 173,
+	"./bg": 174,
+	"./bg.js": 174,
+	"./bm": 175,
+	"./bm.js": 175,
+	"./bn": 176,
+	"./bn.js": 176,
+	"./bo": 177,
+	"./bo.js": 177,
+	"./br": 178,
+	"./br.js": 178,
+	"./bs": 179,
+	"./bs.js": 179,
+	"./ca": 180,
+	"./ca.js": 180,
+	"./cs": 181,
+	"./cs.js": 181,
+	"./cv": 182,
+	"./cv.js": 182,
+	"./cy": 183,
+	"./cy.js": 183,
+	"./da": 184,
+	"./da.js": 184,
+	"./de": 185,
+	"./de-at": 186,
+	"./de-at.js": 186,
+	"./de-ch": 187,
+	"./de-ch.js": 187,
+	"./de.js": 185,
+	"./dv": 188,
+	"./dv.js": 188,
+	"./el": 189,
+	"./el.js": 189,
+	"./en-au": 190,
+	"./en-au.js": 190,
+	"./en-ca": 191,
+	"./en-ca.js": 191,
+	"./en-gb": 192,
+	"./en-gb.js": 192,
+	"./en-ie": 193,
+	"./en-ie.js": 193,
+	"./en-nz": 194,
+	"./en-nz.js": 194,
+	"./eo": 195,
+	"./eo.js": 195,
+	"./es": 196,
+	"./es-do": 197,
+	"./es-do.js": 197,
+	"./es-us": 198,
+	"./es-us.js": 198,
+	"./es.js": 196,
+	"./et": 199,
+	"./et.js": 199,
+	"./eu": 200,
+	"./eu.js": 200,
+	"./fa": 201,
+	"./fa.js": 201,
+	"./fi": 202,
+	"./fi.js": 202,
+	"./fo": 203,
+	"./fo.js": 203,
+	"./fr": 204,
+	"./fr-ca": 205,
+	"./fr-ca.js": 205,
+	"./fr-ch": 206,
+	"./fr-ch.js": 206,
+	"./fr.js": 204,
+	"./fy": 207,
+	"./fy.js": 207,
+	"./gd": 208,
+	"./gd.js": 208,
+	"./gl": 209,
+	"./gl.js": 209,
+	"./gom-latn": 210,
+	"./gom-latn.js": 210,
+	"./gu": 211,
+	"./gu.js": 211,
+	"./he": 212,
+	"./he.js": 212,
+	"./hi": 213,
+	"./hi.js": 213,
+	"./hr": 214,
+	"./hr.js": 214,
+	"./hu": 215,
+	"./hu.js": 215,
+	"./hy-am": 216,
+	"./hy-am.js": 216,
+	"./id": 217,
+	"./id.js": 217,
+	"./is": 218,
+	"./is.js": 218,
+	"./it": 219,
+	"./it.js": 219,
+	"./ja": 220,
+	"./ja.js": 220,
+	"./jv": 221,
+	"./jv.js": 221,
+	"./ka": 222,
+	"./ka.js": 222,
+	"./kk": 223,
+	"./kk.js": 223,
+	"./km": 224,
+	"./km.js": 224,
+	"./kn": 225,
+	"./kn.js": 225,
+	"./ko": 226,
+	"./ko.js": 226,
+	"./ky": 227,
+	"./ky.js": 227,
+	"./lb": 228,
+	"./lb.js": 228,
+	"./lo": 229,
+	"./lo.js": 229,
+	"./lt": 230,
+	"./lt.js": 230,
+	"./lv": 231,
+	"./lv.js": 231,
+	"./me": 232,
+	"./me.js": 232,
+	"./mi": 233,
+	"./mi.js": 233,
+	"./mk": 234,
+	"./mk.js": 234,
+	"./ml": 235,
+	"./ml.js": 235,
+	"./mr": 236,
+	"./mr.js": 236,
+	"./ms": 237,
+	"./ms-my": 238,
+	"./ms-my.js": 238,
+	"./ms.js": 237,
+	"./mt": 239,
+	"./mt.js": 239,
+	"./my": 240,
+	"./my.js": 240,
+	"./nb": 241,
+	"./nb.js": 241,
+	"./ne": 242,
+	"./ne.js": 242,
+	"./nl": 243,
+	"./nl-be": 244,
+	"./nl-be.js": 244,
+	"./nl.js": 243,
+	"./nn": 245,
+	"./nn.js": 245,
+	"./pa-in": 246,
+	"./pa-in.js": 246,
+	"./pl": 247,
+	"./pl.js": 247,
+	"./pt": 248,
+	"./pt-br": 249,
+	"./pt-br.js": 249,
+	"./pt.js": 248,
+	"./ro": 250,
+	"./ro.js": 250,
+	"./ru": 251,
+	"./ru.js": 251,
+	"./sd": 252,
+	"./sd.js": 252,
+	"./se": 253,
+	"./se.js": 253,
+	"./si": 254,
+	"./si.js": 254,
+	"./sk": 255,
+	"./sk.js": 255,
+	"./sl": 256,
+	"./sl.js": 256,
+	"./sq": 257,
+	"./sq.js": 257,
+	"./sr": 258,
+	"./sr-cyrl": 259,
+	"./sr-cyrl.js": 259,
+	"./sr.js": 258,
+	"./ss": 260,
+	"./ss.js": 260,
+	"./sv": 261,
+	"./sv.js": 261,
+	"./sw": 262,
+	"./sw.js": 262,
+	"./ta": 263,
+	"./ta.js": 263,
+	"./te": 264,
+	"./te.js": 264,
+	"./tet": 265,
+	"./tet.js": 265,
+	"./th": 266,
+	"./th.js": 266,
+	"./tl-ph": 267,
+	"./tl-ph.js": 267,
+	"./tlh": 268,
+	"./tlh.js": 268,
+	"./tr": 269,
+	"./tr.js": 269,
+	"./tzl": 270,
+	"./tzl.js": 270,
+	"./tzm": 271,
+	"./tzm-latn": 272,
+	"./tzm-latn.js": 272,
+	"./tzm.js": 271,
+	"./uk": 273,
+	"./uk.js": 273,
+	"./ur": 274,
+	"./ur.js": 274,
+	"./uz": 275,
+	"./uz-latn": 276,
+	"./uz-latn.js": 276,
+	"./uz.js": 275,
+	"./vi": 277,
+	"./vi.js": 277,
+	"./x-pseudo": 278,
+	"./x-pseudo.js": 278,
+	"./yo": 279,
+	"./yo.js": 279,
+	"./zh-cn": 280,
+	"./zh-cn.js": 280,
+	"./zh-hk": 281,
+	"./zh-hk.js": 281,
+	"./zh-tw": 282,
+	"./zh-tw.js": 282
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -1116,20 +1235,20 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 382;
+webpackContext.id = 385;
 
 /***/ }),
 
-/***/ 400:
+/***/ 411:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(319);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(322);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(109);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(323);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(324);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(110);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1170,13 +1289,13 @@ MyApp = __decorate([
 
 /***/ }),
 
-/***/ 454:
+/***/ 457:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CalcularDosePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1205,10 +1324,82 @@ CalcularDosePage = __decorate([
 
 /***/ }),
 
-/***/ 460:
+/***/ 462:
 /***/ (function(module, exports) {
 
 /* (ignored) */
+
+/***/ }),
+
+/***/ 471:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LocalNotificationPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_local_notifications__ = __webpack_require__(114);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var LocalNotificationPage = (function () {
+    function LocalNotificationPage(navCtrl, plt, localNotifications, alertCtrl) {
+        var _this = this;
+        this.navCtrl = navCtrl;
+        this.plt = plt;
+        this.localNotifications = localNotifications;
+        this.plt.ready().then(function (readySource) {
+            _this.localNotifications.on('click', function (notification, state) {
+                var json = JSON.parse(notification.data);
+                var alert = alertCtrl.create({
+                    title: notification.title,
+                    subTitle: json.mydata
+                });
+                alert.present();
+            });
+        });
+    }
+    LocalNotificationPage.notificaoAtiva = function (k, localNotifications) {
+        if (k > 0)
+            this.texto = 'Lembrete sobre a dose de Insulina';
+        else
+            this.texto = 'Lembrete sobre medição da glicemia';
+        localNotifications.schedule({
+            id: 1,
+            title: 'Attenção',
+            text: this.texto,
+            data: { mydata: 'Mensagem de Confirmação' },
+            at: new Date(new Date().getTime() + 5 * 1000) //* 1000 para ser um segundo
+        });
+    };
+    LocalNotificationPage.prototype.scheduleNotification = function () {
+        this.localNotifications.schedule({
+            id: 1,
+            title: 'Attenção',
+            text: 'Lembrete sobre a informação salva',
+            data: { mydata: 'My hidden message this is' },
+            at: new Date(new Date().getTime() + 5 * 1000) //* 1000 para ser um segundo
+        });
+    };
+    return LocalNotificationPage;
+}());
+LocalNotificationPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'local-notification',template:/*ion-inline-start:"/Users/alexsandrosaraiva/Downloads/SmartGlic/src/pages/local-notification/local-notification.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>\n      Visualizar Tabela Resumo\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page15">\n  <img src="assets/img/C3EQhYtxSN6fsmJC7T5a_smart_Glicemia.jpg" style="display:block;max-width:45%;max-height:40%;margin-left:auto;margin-right:auto;border-color:orange;" />\n</ion-content>\n'/*ion-inline-end:"/Users/alexsandrosaraiva/Downloads/SmartGlic/src/pages/local-notification/local-notification.html"*/
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_local_notifications__["a" /* LocalNotifications */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
+], LocalNotificationPage);
+
+//# sourceMappingURL=local-notification.js.map
 
 /***/ }),
 
@@ -1218,9 +1409,11 @@ CalcularDosePage = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tabs_controller_tabs_controller__ = __webpack_require__(110);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__cadastrar_terapia_cadastrar_terapia__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tabs_controller_tabs_controller__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__cadastrar_terapia_cadastrar_terapia__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ajuda_ajuda__ = __webpack_require__(335);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__dose_diaria_dose_diaria__ = __webpack_require__(113);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1234,13 +1427,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var HomePage = (function () {
-    function HomePage(navCtrl) {
+    function HomePage(navCtrl, modalCtrl) {
         this.navCtrl = navCtrl;
+        this.modalCtrl = modalCtrl;
         this.tabs = __WEBPACK_IMPORTED_MODULE_2__tabs_controller_tabs_controller__["a" /* TabsControllerPage */];
     }
     HomePage.prototype.goToCadastrarTerapia = function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__cadastrar_terapia_cadastrar_terapia__["a" /* CadastrarTerapiaPage */]);
+    };
+    HomePage.prototype.goToAjuda = function (params) {
+        if (!params)
+            params = {};
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__ajuda_ajuda__["a" /* AjudaPage */]);
+    };
+    HomePage.prototype.goToAddDose = function () {
+        var modal = this.modalCtrl.create('EventModalPage');
+        modal.present();
+    };
+    HomePage.prototype.goToDoseInsulina = function (params) {
+        if (!params)
+            params = {};
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__dose_diaria_dose_diaria__["a" /* DoseDiariaPage */]);
     };
     HomePage.prototype.goToCadastrarUsuario = function (params) {
         if (!params)
@@ -1251,14 +1461,14 @@ var HomePage = (function () {
 }());
 HomePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'page-home',template:/*ion-inline-start:"/Users/alexsandrosaraiva/Downloads/SmartGlic/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar hideBackButton = \'true\'>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>\n      Início\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="list-avatar-page" padding id="page8" style="background-color:#FFFFFF;">\n  <img src="assets/img/C3EQhYtxSN6fsmJC7T5a_smart_Glicemia.jpg" style="display:block;max-width:45%;max-height:40%;margin-left:auto;margin-right:auto;border-color:orange;" />\n\n  <ion-list id="Hoje">\n    <ion-list-header no-lines>\n        Hoje\n    </ion-list-header >\n    <ion-item>\n      <ion-avatar   item-start>\n          <img src="assets/img/water-icon.png">\n      </ion-avatar>\n      <h2>Glicemia</h2>\n      <p>156(mg/dL)</p>\n      <ion-note item-end>18:40</ion-note>\n    </ion-item>\n\n    <ion-item>\n      <ion-avatar item-start>\n          <img src="assets/img/syringe-icon.png">\n      </ion-avatar>\n      <h2>Insulinização <i>Basal</i></h2>\n      <p>0,3 U </p>\n      <ion-note item-end>12:10</ion-note>\n    </ion-item>\n\n    <ion-item>\n      <ion-avatar item-start>\n          <img src="assets/img/warning-icon.png">\n      </ion-avatar>\n      <h2>Hipoglicemia</h2>\n      <p>140(mg/dL)</p>\n      <ion-note item-end>10:20</ion-note>\n    </ion-item>\n  </ion-list>\n\n  <ion-list id="20/11/2017">\n    <ion-list-header no-lines>\n      20/11/201\n    </ion-list-header >\n    <ion-item>\n      <ion-avatar item-start>\n          <img src="assets/img/syringe-icon.png">\n      </ion-avatar>\n      <h2>Insulinização <i> Bolus</i></h2>\n      <p>0,4 U</p>\n      <ion-note item-end>18:40</ion-note>\n    </ion-item>\n\n    <ion-item>\n      <ion-avatar item-start>\n          <img src="assets/img/water-icon.png">\n      </ion-avatar>\n      <h2>Glicemia</h2>\n      <p>180(mg/dL)</p>\n      <ion-note item-end>12:10</ion-note>\n    </ion-item>\n\n    <ion-item>\n      <ion-avatar item-start>\n          <img src="assets/img/dinner-icon.png">\n      </ion-avatar>\n      <h2>Refeição (Café da Manha)</h2>\n      <p>140(mg/dL)</p>\n      <ion-note item-end>10:20</ion-note>\n    </ion-item>\n  </ion-list>\n\n\n\n</ion-content>\n'/*ion-inline-end:"/Users/alexsandrosaraiva/Downloads/SmartGlic/src/pages/home/home.html"*/
+        selector: 'page-home',template:/*ion-inline-start:"/Users/alexsandrosaraiva/Downloads/SmartGlic/src/pages/home/home.html"*/'<!-- <ion-header>\n  <ion-navbar hideBackButton = \'true\'>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>\n      Início\n    </ion-title>\n  </ion-navbar>\n</ion-header> -->\n\n<ion-content class="list-avatar-page" padding id="page8" style="background-color:#FFFFFF;">\n  <img src="assets/img/C3EQhYtxSN6fsmJC7T5a_smart_Glicemia.jpg" style="display:block;max-width:45%;max-height:40%;margin-left:auto;margin-right:auto;border-color:orange;" />\n\n\n<!-- Mini -->\n\n\n\n<ion-fab right top >\n  <button ion-fab ><ion-icon name= "md-add"> </ion-icon></button>\n  <ion-fab-list side="down">\n    <button ion-fab color="positive" on-click="goToAddDose()"><img src="assets/img/water-icon.png"></button>\n    <button ion-fab color="positive"><img src="assets/img/syringe-icon.png"></button>\n    <button ion-fab color="calm"><ion-icon name="md-help" (click)="goToAjuda()" ></ion-icon></button>\n    </ion-fab-list>\n</ion-fab>\n\n<!-- Parte do codigo para colocar o Fabbutton dos 4 lados\n\n<ion-fab bottom  center >\n   <button ion-fab>Share</button>\n   <ion-fab-list side="top">\n     <button ion-fab>cima</button>\n\n   </ion-fab-list>\n   <ion-fab-list side="left">\n     <button ion-fab>esquerda</button>\n   </ion-fab-list>\n   <ion-fab-list side="bottom">\n     <button ion-fab>baixo</button>\n   </ion-fab-list>\n   <ion-fab-list side="right">\n     <button ion-fab>direita</button>\n   </ion-fab-list>\n </ion-fab>\n\n-->\n  <ion-list id="Hoje">\n    <ion-list-header no-lines>\n        Hoje\n    </ion-list-header >\n    <ion-item>\n      <ion-avatar   item-start>\n          <img src="assets/img/water-icon.png">\n      </ion-avatar>\n      <h2>Glicemia</h2>\n      <p>156(mg/dL)</p>\n      <ion-note item-end>18:40</ion-note>\n    </ion-item>\n\n    <ion-item>\n      <ion-avatar item-start>\n          <img src="assets/img/syringe-icon.png">\n      </ion-avatar>\n      <h2>Insulinização <i>Basal</i></h2>\n      <p>0,3 U </p>\n      <ion-note item-end>12:10</ion-note>\n    </ion-item>\n\n    <ion-item>\n      <ion-avatar item-start>\n          <img src="assets/img/warning-icon.png">\n      </ion-avatar>\n      <h2>Hipoglicemia</h2>\n      <p>140(mg/dL)</p>\n      <ion-note item-end>10:20</ion-note>\n    </ion-item>\n  </ion-list>\n\n  <ion-list id="20/11/2017">\n    <ion-list-header no-lines>\n      20/11/201\n    </ion-list-header >\n    <ion-item>\n      <ion-avatar item-start>\n          <img src="assets/img/syringe-icon.png">\n      </ion-avatar>\n      <h2>Insulinização <i> Bolus</i></h2>\n      <p>0,4 U</p>\n      <ion-note item-end>18:40</ion-note>\n    </ion-item>\n\n    <ion-item>\n      <ion-avatar item-start>\n          <img src="assets/img/water-icon.png">\n      </ion-avatar>\n      <h2>Glicemia</h2>\n      <p>180(mg/dL)</p>\n      <ion-note item-end>12:10</ion-note>\n    </ion-item>\n\n    <ion-item>\n      <ion-avatar item-start>\n          <img src="assets/img/dinner-icon.png">\n      </ion-avatar>\n      <h2>Refeição (Café da Manha)</h2>\n      <p>140(mg/dL)</p>\n      <ion-note item-end>10:20</ion-note>\n    </ion-item>\n  </ion-list>\n\n\n\n</ion-content>\n'/*ion-inline-end:"/Users/alexsandrosaraiva/Downloads/SmartGlic/src/pages/home/home.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */]])
 ], HomePage);
 
 //# sourceMappingURL=home.js.map
 
 /***/ })
 
-},[338]);
+},[341]);
 //# sourceMappingURL=main.js.map
